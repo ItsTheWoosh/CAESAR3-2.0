@@ -73,8 +73,9 @@ int main()
         if (isLetter(plain))
         {
             plain = plain - 65;
-            plain = r * plain + s;
-            cypher = plain + 65;
+            cypher = r * plain + s;
+            cypher = cypher % 26;
+            cypher = cypher + 65;
             outfile << cypher;
         } else outfile << plain;
     }
